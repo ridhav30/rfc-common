@@ -1,0 +1,36 @@
+{
+  "name": "rfc-common",
+  "version": "1.0.0",
+  "description": "common package for e-comerce",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridhav30/rfc-common.git"
+  },
+  "keywords": [
+    "common-package",
+    "common-package"
+  ],
+  "author": "Ridha V <ridhav30@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ridhav30/rfc-common.git/issues"
+  },
+  "homepage": "https://github.com/ridhav30/rfc-common.git#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "sequelize": "^6.35.1",
+    "sequelize-typescript": "^2.1.6"
+  }
+}
