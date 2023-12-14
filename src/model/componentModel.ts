@@ -58,3 +58,5 @@ export const NavData = sequelize.define<any, TNavData>('NavDatas', {
         allowNull: false,
     },
 });
+Nav.hasMany(NavData, { foreignKey: 'navId'})
+NavData.belongsTo(Nav, { foreignKey: 'navId' })
