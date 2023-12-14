@@ -9,7 +9,7 @@ export type TUser = {
     firstName: string;
     lastName: string;
     email: string;
-    password?: string;
+    password: string;
 
 }
 export const User = sequelize.define<any, TUser>('Users', {

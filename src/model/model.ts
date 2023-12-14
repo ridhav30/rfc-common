@@ -1,6 +1,8 @@
 import {
-    User
+    User,TUser,
+    Address,TAddress
 } from './authModel'
 export {
-    User
+    User,TUser,
+    Address,TAddress
 }
