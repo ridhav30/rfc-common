@@ -5,10 +5,10 @@ const { INTEGER, STRING } = DataTypes
     User Table
 */
 export type TUser = {
-    userId?: number;
-    firstName?: string;
-    lastName?: string;
-    email?: string;
+    userId: number;
+    firstName: string;
+    lastName: string;
+    email: string;
     password?: string;
 
 }
@@ -42,14 +42,14 @@ export const User = sequelize.define<any, TUser>('Users', {
 */
 
 export type TAddress = {
-    addressId?: number;
+    addressId: number;
     houseNo?: string;
-    streetName?: string;
-    address?: string;
-    city?: string;
-    state?: string;
-    country?: string;
-    userId?: number
+    streetName: string;
+    address: string;
+    city: string;
+    state: string;
+    country: string;
+    userId: number
 }
 
 export const Address = sequelize.define<any, TAddress>('Addresses', {
