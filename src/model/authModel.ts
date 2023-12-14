@@ -84,7 +84,7 @@ export const Address = sequelize.define<any, TAddress>('Addresses', {
         allowNull: false
     },
     userId: {
-        type: STRING,
+        type: INTEGER,
         allowNull: false
     }
 })

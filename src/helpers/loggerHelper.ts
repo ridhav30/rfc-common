@@ -1,6 +1,5 @@
 import { createLogger, format, transports } from 'winston';
 import * as morgan from 'morgan';
-const LOG_TYPE = process.env.LOG_TYPE ?? ''
 
 const logLevels = {
   error: 0,
@@ -26,7 +25,7 @@ export const logger = createLogger({
   ],
 });
 
-export const apiLogger = morgan(LOG_TYPE, {
+export const apiLogger = morgan('combined', {
   stream: {
     write: (message) => {
       logger.http(message.trim());
