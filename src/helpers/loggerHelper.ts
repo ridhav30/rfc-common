@@ -1,5 +1,6 @@
 import { createLogger, format, transports } from 'winston';
 import * as morgan from 'morgan';
+import * as path from 'path'
 
 const logLevels = {
   error: 0,
@@ -19,9 +20,9 @@ export const logger = createLogger({
   ),
   transports: [
     new transports.Console(),
-    new transports.File({ filename: 'error.log', level: 'error' }),
-    new transports.File({ filename: 'combined.log' }),
-    new transports.File({ filename: 'http.log', level: 'http' })
+    new transports.File({ filename: path.join('logs', 'error.log'), level: 'error' }),
+    new transports.File({ filename: path.join('logs', 'combined.log') }),
+    new transports.File({ filename: path.join('logs', 'http.log'), level: 'http' })
   ],
 });
 
