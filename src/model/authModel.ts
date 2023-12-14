@@ -4,7 +4,7 @@ const { INTEGER, STRING } = DataTypes
 /*
     User Table
 */
-export interface IUser  {
+export type TUser = {
     userId: number;
     firstName: string;
     lastName: string;
@@ -12,7 +12,7 @@ export interface IUser  {
     password: string;
 
 }
-export const User = sequelize.define<any, IUser>('Users', {
+export const User = sequelize.define<any, TUser>('Users', {
     userId: {
         type: INTEGER,
         autoIncrement: true,
@@ -41,7 +41,7 @@ export const User = sequelize.define<any, IUser>('Users', {
     Address Table
 */
 
-export interface IAddress  {
+export type TAddress = {
     addressId: number;
     houseNo?: string;
     streetName: string;
@@ -52,7 +52,7 @@ export interface IAddress  {
     userId: number
 }
 
-export const Address = sequelize.define<any, IAddress>('Addresses', {
+export const Address = sequelize.define<any, TAddress>('Addresses', {
     addressId: {
         type: INTEGER,
         autoIncrement: true,
