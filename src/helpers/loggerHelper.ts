@@ -25,7 +25,7 @@ export const logger = createLogger({
     ],
 });
 
-export const morganLogger = morgan('combined', {
+export const apiLogger = morgan('combined', {
     stream: {
       write: (message) => {
         logger.http(message.trim());
