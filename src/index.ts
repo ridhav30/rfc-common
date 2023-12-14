@@ -1,7 +1,8 @@
-export * as helper from './helpers/helper'
-export * as model from './model/model'
-export * as db from './db/db'
-export * as constants from './constants/status'
+export * from './helpers/helper'
+export * from './model/model'
+export * from './db/db'
+export * from './constants/status'
+export type * from './model/model' 
 //import { TAddress, TNav, TUser, TNavData } from './model/model'
 //export type { TAddress, TNav, TUser, TNavData }
 
