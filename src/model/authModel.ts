@@ -2,11 +2,11 @@ import { DataTypes } from 'sequelize'
 import { sequelize } from '../db/db'
 
 export type TUser = {
-    userId: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
+    userId?: number;
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    password?: string;
 
 }
 export const User = sequelize.define<any, TUser>('Users', {
