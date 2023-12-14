@@ -5,7 +5,8 @@ const logLevels = {
     error: 0,
     warn: 1,
     info: 2,
-    debug: 3,
+    http: 3,
+    debug: 4,
 };
 
 export const logger = createLogger({
