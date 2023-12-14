@@ -1,11 +1,11 @@
 import {
-    User, TUser,
-    Address, TAddress
+    User, IUser,
+    Address, IAddress
 } from './authModel'
 import { Nav, NavData, TNav, TNavData } from './componentModel'
 export {
-    User, TUser,
-    Address, TAddress,
+    User, IUser,
+    Address, IAddress,
     Nav, NavData, TNav,
     TNavData
 }
