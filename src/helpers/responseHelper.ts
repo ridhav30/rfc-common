@@ -1,4 +1,4 @@
-type responsePayload = {
+export type responsePayload = {
     apiStatus: number,
     responseStatus: number,
     message: string,
