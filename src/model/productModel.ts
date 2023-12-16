@@ -48,11 +48,11 @@ export const Product = sequelize.define<any, TProduct>('Products', {
         allowNull: false
     },
     listPrice: {
-        type: NUMBER,
+        type: INTEGER,
         allowNull: false
     },
     salePrice: {
-        type: NUMBER,
+        type: INTEGER,
         allowNull: false
     },
     categoryId: {
@@ -85,7 +85,7 @@ export const ProductMeta = sequelize.define<any, TProductMeta>('ProductMetas', {
         allowNull: false
     },
     productId: {
-        type: NUMBER,
+        type: INTEGER,
         allowNull: false
     },
     imageUrl: {
@@ -126,7 +126,7 @@ export const SubCategory = sequelize.define<any, TSubCategory>('SubCategories', 
         allowNull: false
     },
     categoryId: {
-        type: NUMBER,
+        type: INTEGER,
         allowNull: false
     },
     isDeleted: {
