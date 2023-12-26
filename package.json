@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build && PRISMA_CLI_BINARY_TARGETS=darwin-arm64,rhel-openssl-1.0.x npm install &&npx prisma generate"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
