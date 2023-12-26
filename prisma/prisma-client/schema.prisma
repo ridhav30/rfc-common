@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output = "./prisma-client"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  productId   Int           @id @default(autoincrement())
+  name        String
+  description String
+  listPrice   String
+  salePrice   String
+  categoryId  Int
+  qty         Int
+  tag         String
+  sku         Int
+  isDeleted   Boolean       @default(false)
+  metas       ProductMeta[]
+  category    Category      @relation(fields: [categoryId], references: [categoryId])
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime?     @updatedAt
+}
+
+model ProductMeta {
+  productMetaID Int      @id @default(autoincrement())
+  productId     Int
+  imageUrl      String
+  isDeleted     Boolean  @default(false)
+  product       Product  @relation(fields: [productId], references: [productId])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Category {
+  categoryId    Int           @id @default(autoincrement())
+  name          String
+  isDeleted     Boolean       @default(false)
+  subCategories SubCategory[]
+  product       Product[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model SubCategory {
+  subCategoryId Int      @id @default(autoincrement())
+  name          String
+  isDeleted     Boolean  @default(false)
+  categoryId    Int
+  category      Category @relation(fields: [categoryId], references: [categoryId])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
