@@ -29,9 +29,7 @@
   },
   "files": [
     "lib/**/*",
-    "prisma/**/*",
-    "prisma/prisma-client/*"
-  ],
+    "prisma/**/*"  ],
   "dependencies": {
     "@prisma/client": "^5.7.1",
     "@types/winston": "^2.4.4",
