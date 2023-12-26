@@ -28,13 +28,13 @@ model Product {
 }
 
 model ProductMeta {
-  productMetaID Int      @id @default(autoincrement())
+  productMetaID Int       @id @default(autoincrement())
   productId     Int
   imageUrl      String
-  isDeleted     Boolean  @default(false)
-  product       Product  @relation(fields: [productId], references: [productId])
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  isDeleted     Boolean   @default(false)
+  product       Product   @relation(fields: [productId], references: [productId])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime? @updatedAt
 }
 
 model Category {
@@ -44,15 +44,37 @@ model Category {
   subCategories SubCategory[]
   product       Product[]
   createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
+  updatedAt     DateTime?     @updatedAt
 }
 
 model SubCategory {
-  subCategoryId Int      @id @default(autoincrement())
+  subCategoryId Int       @id @default(autoincrement())
   name          String
-  isDeleted     Boolean  @default(false)
+  isDeleted     Boolean   @default(false)
   categoryId    Int
-  category      Category @relation(fields: [categoryId], references: [categoryId])
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  category      Category  @relation(fields: [categoryId], references: [categoryId])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime? @updatedAt
+}
+
+model User {
+  userId      Int         @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String
+  password    String
+  userLogings UserLogin[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime?   @updatedAt
+}
+
+model UserLogin {
+  userLoginId Int       @id @default(autoincrement())
+  logout      Boolean   @default(false)
+  fcm         String?
+  deviceId    String?
+  userId      Int
+  user        User      @relation(fields: [userId], references: [userId])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime? @updatedAt
 }
