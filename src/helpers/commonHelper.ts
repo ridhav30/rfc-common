@@ -1,5 +1,5 @@
 import * as httpExpressContext from "express-http-context";
-import * as jwt from "jsonwebtoken";
+import { verify } from "jsonwebtoken";
 import { NextFunction, Request, Response } from "express";
 import { logger, responseGenerator } from "./helper";
 import { config } from "dotenv";
@@ -21,7 +21,7 @@ export const verfyAccessToken = (
         data: [],
       });
     }
-    const decoded = jwt.verify(token, sceretKey);
+    const decoded = verify(token, sceretKey);
     httpContext.set("user", decoded);
     next();
   } catch (error) {
