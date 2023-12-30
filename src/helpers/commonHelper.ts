@@ -1,5 +1,5 @@
 import * as httpExpressContext from "express-http-context";
-import jwt from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import { NextFunction, Request, Response } from "express";
 import { logger, responseGenerator } from "./helper";
 import { config } from "dotenv";
