@@ -62,7 +62,7 @@ model User {
   firstName   String
   lastName    String
   email       String   
-  password    String?
+  password    String
   phone       String    
   userLogings UserLogin[]
   loginLogs   LoginLogs[]
