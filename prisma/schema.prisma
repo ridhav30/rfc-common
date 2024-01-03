@@ -65,7 +65,6 @@ model User {
   password    String?     @default("")
   phone       String
   userLogings UserLogin[]
-  loginLogs   LoginLogs[]
   token       String      @unique
   createdAt   DateTime    @default(now())
   updatedAt   DateTime?   @updatedAt
@@ -73,8 +72,7 @@ model User {
 
 model LoginLogs {
   LoginLogId Int       @id @default(autoincrement())
-  userId     Int
-  user       User      @relation(fields: [userId], references: [userId])
+  phone      String
   createdAt  DateTime  @default(now())
   updatedAt  DateTime? @updatedAt
 }
